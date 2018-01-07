@@ -33,9 +33,9 @@ import alabaster
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.napoleon',
-    'sphinx.ext.autodoc',
-    'alabaster'
+    #'sphinx.ext.napoleon',
+    #'sphinx.ext.autodoc',
+    'alabaster',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -98,7 +98,7 @@ html_show_sourcelink = False
 #
 html_theme_options = {
     'logo': 'logo-colour-sm.png',
-    'description': 'Uniform Data Collection',
+    'description': 'Python Robinhood API',
     'description_font_style': 'italic',
     'github_user': 'lockefox',
     'github_repo': 'pyrobinhood',
