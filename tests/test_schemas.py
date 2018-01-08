@@ -11,7 +11,7 @@ def test_accounts_schema():
 
     result = helpers.raw_request_get(
         'https://api.robinhood.com/accounts/',
-        headers={'Authorization':'Token ' + token},
+        headers={'Authorization': 'Token ' + token},
     )
 
     schema = helpers.load_schema('accounts.schema')
@@ -25,7 +25,7 @@ def test_applications_schema():
 
     result = helpers.raw_request_get(
         'https://api.robinhood.com/applications/',
-        headers={'Authorization':'Token ' + token},
+        headers={'Authorization': 'Token ' + token},
     )
 
     schema = helpers.load_schema('applications.schema')
@@ -39,7 +39,7 @@ def test_dividends_schema():
 
     result = helpers.raw_request_get(
         'https://api.robinhood.com/dividends/',
-        headers={'Authorization':'Token ' + token},
+        headers={'Authorization': 'Token ' + token},
     )
 
     schema = helpers.load_schema('dividends.schema')
@@ -53,10 +53,21 @@ def test_documents_schema():
 
     result = helpers.raw_request_get(
         'https://api.robinhood.com/documents/',
-        headers={'Authorization':'Token ' + token},
+        headers={'Authorization': 'Token ' + token},
     )
 
     schema = helpers.load_schema('documents.schema')
+
+    jsonschema.validate(result, schema)
+
+def test_fundamentals_schema():
+    """validate /fundamentals endpoint"""
+    result = helpers.raw_request_get(
+        'https://api.robinhood.com/fundamentals/',
+        params={'symbols': helpers.CONFIG.get('tests', 'good_stock_list')},
+    )
+
+    schema = helpers.load_schema('fundamentals.schema')
 
     jsonschema.validate(result, schema)
 

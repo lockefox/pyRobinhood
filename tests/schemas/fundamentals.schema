@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "open": {"type": "string"},
+                    "high": {"type": "string"},
+                    "low": {"type": "string"},
+                    "volume": {"type": "string"},
+                    "average_volume": {"type": "string"},
+                    "high_52_weeks": {"type": "string"},
+                    "dividend_yield": {"type": "string"},
+                    "low_52_weeks": {"type": "string"},
+                    "market_cap": {"type": "string"},
+                    "pe_ratio": {"type": ["string", "null"]},
+                    "description": {"type": "string"},
+                    "instrument": {"type": "string", "format": "uri"},
+                    "ceo": {"type": "string"},
+                    "headquarters_city": {"type": "string"},
+                    "headquarters_state": {"type": "string"},
+                    "num_employees": {"type": "integer"},
+                    "year_founded": {"type": "integer"}
+                },
+                "required": [
+                    "open", "high", "low", "volume", "average_volume", 
+                    "high_52_weeks", "dividend_yield", "low_52_weeks", "market_cap",
+                    "pe_ratio", "description", "instrument", "ceo", 
+                    "headquarters_city", "headquarters_state", "num_employees",
+                    "year_founded"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["results"],
+    "additionalProperties": false
+}
