@@ -7,16 +7,16 @@ python:
 install:
   - "pip install ."
 script:
-  - "python setup.py test"
+  - "python setup.py travis"
 after_success:
   - "pip install python-coveralls"
   - "coveralls"
-deploy:
-  skip_cleanup: true
-  provider: pypi
-  user: lockefox
-  password:
-    secure: TODO
-  on:
-    tags: true
-    distributions: "sdist bdist_wheel"
+#deploy:
+#  skip_cleanup: true
+#  provider: pypi
+#  user: lockefox
+#  password:
+#    secure: TODO
+#  on:
+#    tags: true
+#    distributions: "sdist bdist_wheel"
