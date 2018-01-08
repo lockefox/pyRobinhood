@@ -18,6 +18,20 @@ def test_accounts_schema():
 
     jsonschema.validate(result, schema)
 
+@pytest.mark.auth
+def test_applications_schema():
+    """validate /applications endpoint"""
+    token = helpers.xfail_can_auth()
+
+    result = helpers.raw_request_get(
+        'https://api.robinhood.com/applications/',
+        headers={'Authorization':'Token ' + token},
+    )
+
+    schema = helpers.load_schema('applications.schema')
+
+    jsonschema.validate(result, schema)
+
 def test_instruments_schema():
     """validate /instruments endpoint"""
     result = helpers.raw_request_get(
