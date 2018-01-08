@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "account": {"type": "string", "format": "uri"},
+                    "url": {"type": "string", "format": "uri"},
+                    "amount": {"type": "string"},
+                    "payable_date": {"type": "string", "format": "date-time"},
+                    "instrument": {"type": "string", "format": "uri"},
+                    "rate": {"type": "string"},
+                    "record_date": {"type": "string", "format": "date-time"},
+                    "position": {"type": "string"},
+                    "withholding": {"type": "string"},
+                    "id": {"type": "string"},
+                    "paid_at": {"type": "string", "format": "date-time"}
+                },
+                "required": [
+                    "account", "url", "amount", "payable_date", "instrument",
+                    "rate", "record_date", "position", "withholding", "id",
+                    "paid_at"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["previous", "next", "results"],
+    "additionalProperties": false
+}
