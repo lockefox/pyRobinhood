@@ -11,9 +11,20 @@ def test_accounts_schema():
 
     result = helpers.raw_request_get(
         'https://api.robinhood.com/accounts/',
-        headers={'Authorization':'Token ' + token}
+        headers={'Authorization':'Token ' + token},
     )
 
     schema = helpers.load_schema('accounts.schema')
+
+    jsonschema.validate(result, schema)
+
+def test_instruments_schema():
+    """validate /instruments endpoint"""
+    result = helpers.raw_request_get(
+        'https://api.robinhood.com/instruments/' +
+        helpers.CONFIG.get('tests', 'good_instrument')
+    )
+
+    schema = helpers.load_schema('instruments.schema')
 
     jsonschema.validate(result, schema)

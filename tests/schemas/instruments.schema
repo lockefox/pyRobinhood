@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "min_tick_size": {"type": ["string", "null"]},
+        "type": {"type": "string", "enum": ["stock"]},
+        "splits": {"type": "string", "format": "uri"},
+        "margin_initial_ratio": {"type": "string"},
+        "url": {"type": "string", "format": "uri"},
+        "quote": {"type": "string", "format": "uri"},
+        "tradability": {"type": "string", "enum": ["tradable"]},
+        "bloomberg_unique": {"type": "string"},
+        "list_date": {"type": "string"},
+        "name": {"type": "string"},
+        "symbol": {"type": "string"},
+        "fundamentals": {"type": "string", "format": "uri"},
+        "state": {"type": "string", "enum": ["active"]},
+        "country": {"type": "string"},
+        "day_trade_ratio": {"type": "string"},
+        "tradeable": {"type": "boolean"},
+        "maintenance_ratio": {"type": "string"},
+        "id": {"type": "string"},
+        "market": {"type": "string", "format": "uri"},
+        "simple_name": {"type": "string"}
+    },
+    "required": [
+        "min_tick_size", "type", "splits", "margin_initial_ratio", "url", "quote", 
+        "tradability", "bloomberg_unique", "list_date", "name", "symbol", "fundamentals",
+        "state", "country", "day_trade_ratio", "tradeable", "maintenance_ratio",
+        "id", "market", "simple_name"
+    ],
+    "additionalProperties": false
+}
