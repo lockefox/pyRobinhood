@@ -102,7 +102,7 @@ setup(
     package_data={
         '': ['LICENSE', 'README.rst', ]
     },
-    setup_requires=["setuphelpers"],
+    setup_requires=['setuphelpers'],
     install_requires=[
         'requests',
         'six',
