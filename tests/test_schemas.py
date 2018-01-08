@@ -28,3 +28,14 @@ def test_instruments_schema():
     schema = helpers.load_schema('instruments.schema')
 
     jsonschema.validate(result, schema)
+
+def test_news_schema():
+    """validate /midlands/news/ endpoint"""
+    result = helpers.raw_request_get(
+        'https://api.robinhood.com/midlands/news/',
+        params={'symbol': helpers.CONFIG.get('tests', 'good_stock')}
+    )
+
+    schema = helpers.load_schema('news.schema')
+
+    jsonschema.validate(result, schema)

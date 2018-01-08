@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "count": {"type": "integer"},
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items":{
+                "type": "object",
+                "properties": {
+                    "api_source": {"type": "string"},
+                    "author": {"type": "string"},
+                    "instrument": {"type": "string", "format": "uri"},
+                    "num_clicks": {"type": "integer"},
+                    "preview_image_url": {"type": "string", "format": "uri"},
+                    "preview_image_width": {"type": "integer"},
+                    "preview_image_height": {"type": "integer"},
+                    "published_at": {"type": "string", "format": "date-time"},
+                    "relay_url": {"type": "string", "format": "uri"},
+                    "source": {"type": "string"},
+                    "summary": {"type": "string"},
+                    "title": {"type": "string"},
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "url": {"type": "string", "format": "uri"},
+                    "uuid": {"type": "string"}
+                },
+                "required": [
+                    "api_source", "author", "instrument", "num_clicks", "preview_image_url", 
+                    "preview_image_width", "preview_image_height", "published_at", "relay_url",
+                    "source", "summary", "title", "updated_at", "url", "uuid"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["count", "next", "previous"],
+    "additionalProperties": false
+}
