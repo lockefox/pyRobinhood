@@ -53,7 +53,7 @@ class PyTest(TestCommand):
             '4',
             '--cov=' + __library_name__,
             '--cov-report=term-missing',
-            '--cov-config=.coveragerc'
+            '--cov-config=.coveragerc',
         ]
 
     def run_tests(self):
