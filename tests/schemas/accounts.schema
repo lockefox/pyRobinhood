@@ -1,3 +1,101 @@
 {
-    
+    "type": "object",
+    "properties": {
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "deactivated": {"type": "boolean"},
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "portfolio": {"type": "string", "format": "uri"},
+                    "cash_balances": {"type": "null"},
+                    "can_downgrade_to_cash": {"type": "string", "format": "date-time"},
+                    "withdrawal_halted": {"type": "boolean"},
+                    "cash_available_for_withdrawal": {"type": "string"},
+                    "type": {"type": "string", "enum": ["margin"]},
+                    "sma": {"type": "string"},
+                    "sweep_enabled": {"type": "boolean"},
+                    "deposit_halted": {"type": "boolean"},
+                    "buying_power": {"type": "string"},
+                    "user": {"type": "string", "format": "uri"},
+                    "max_ach_early_access_amount": {"type": "string", "format": "uri"},
+                    "cash_held_for_orders": {"type": "string"},
+                    "only_position_closing_trades": {"type": "boolean"},
+                    "url": {"type": "string", "format": "uri"},
+                    "positions": {"type": "string", "format": "uri"},
+                    "created_at": {"type": "string", "format": "date-time"},
+                    "cash": {"type": "string"},
+                    "sma_held_for_orders": {"type": "string"},
+                    "unsettled_debit": {"type": "string"},
+                    "account_number": {"type": "string"},
+                    "uncleared_deposits": {"type": "string"},
+                    "unsettled_funds": {"type": "string"},
+                    "instant_eligibility": {
+                        "type": "object",
+                        "properties": {
+                            "updated_at": {"type": "null"},
+                            "reason": {"type": "string"},
+                            "reinstatement_date": {"type": ["null", "string"], "format": "date-time"},
+                            "reversal": {"type": "null"},
+                            "state": {"type": "string", "enum": ["ok"]}
+                        },
+                        "required": [
+                            "updated_at", "reason", "reinstatement_date", "reversal", "state"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "margin_balances": {
+                        "type": "object",
+                        "properties": {
+                            "day_trade_buying_power": {"type": "string"},
+                            "start_of_day_overnight_buying_power": {"type": "string"},
+                            "overnight_buying_power_held_for_orders": {"type": "string"},
+                            "cash_held_for_orders": {"type": "string"},
+                            "created_at": {"type": "string", "format": "date-time"},
+                            "unsettled_debit": {"type": "string"},
+                            "start_of_day_dtbp": {"type": "string"},
+                            "day_trade_buying_power_held_for_orders": {"type": "string"},
+                            "overnight_buying_power": {"type": "string"},
+                            "marked_pattern_day_trader_date": {"type": ["null", "string"], "format": "date-time"},
+                            "cash": {"type": "string"},
+                            "unallocated_margin_cash": {"type": "string"},
+                            "updated_at": {"type": "string", "format": "date-time"},
+                            "cash_available_for_withdrawal": {"type": "string"},
+                            "margin_limit": {"type": "string"},
+                            "outstanding_interest": {"type": "string"},
+                            "uncleared_deposits": {"type": "string"},
+                            "unsettled_funds": {"type": "string"},
+                            "gold_equity_requirement": {"type": "string"},
+                            "day_trade_ratio": {"type": "string"},
+                            "overnight_ratio": {"type": "string"}
+                        },
+                        "required": [
+                            "day_trade_buying_power", "start_of_day_overnight_buying_power", 
+                            "overnight_buying_power_held_for_orders", "cash_held_for_orders", "created_at", 
+                            "unsettled_debit", "start_of_day_dtbp", "day_trade_buying_power_held_for_orders",
+                            "overnight_buying_power", "marked_pattern_day_trader_date", "cash", "unallocated_margin_cash",
+                            "updated_at", "cash_available_for_withdrawal", "margin_limit", "outstanding_interest",
+                            "uncleared_deposits", "unsettled_funds", "gold_equity_requirement", "day_trade_ratio",
+                            "overnight_ratio"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "required": [
+                    "deactivated", "updated_at", "margin_balances", "portfolio", "cash_balances",
+                    "can_downgrade_to_cash", "withdrawal_halted", "cash_available_for_withdrawal", "type", "sma",
+                    "sweep_enabled", "deposit_halted", "buying_power", "user", "max_ach_early_access_amount",
+                    "instant_eligibility", "cash_held_for_orders", "only_position_closing_trades", "url",
+                    "positions", "created_at", "cash", "sma_held_for_orders", "unsettled_debit", "account_number",
+                    "uncleared_deposits", "unsettled_funds"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["previous", "next", "results"],
+    "additionalProperties": false
 }
