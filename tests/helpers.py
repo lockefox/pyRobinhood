@@ -140,5 +140,3 @@ def load_schema(
         schema = json.load(schema_fh)
 
     return schema
-
-

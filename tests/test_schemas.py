@@ -46,6 +46,20 @@ def test_dividends_schema():
 
     jsonschema.validate(result, schema)
 
+@pytest.mark.auth
+def test_documents_schema():
+    """validate /documents endpoint"""
+    token = helpers.xfail_can_auth()
+
+    result = helpers.raw_request_get(
+        'https://api.robinhood.com/documents/',
+        headers={'Authorization':'Token ' + token},
+    )
+
+    schema = helpers.load_schema('documents.schema')
+
+    jsonschema.validate(result, schema)
+
 def test_instruments_schema():
     """validate /instruments endpoint"""
     result = helpers.raw_request_get(
