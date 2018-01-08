@@ -1,4 +1,5 @@
 """helpers.py: pytest helpers/config parsers"""
+import atexit
 from os import path
 import json
 import configparser
@@ -96,7 +97,27 @@ def xfail_can_auth(config=CONFIG):
         except Exception as err:
             pytest.xfail('Unable to connect to auth {!r}'.format(err))
 
+        atexit.register(end_logout, AUTH_KEY)
+
     return AUTH_KEY
+
+def end_logout(auth_key):
+    """atexit handler for logging out token
+
+    Args:
+        auth_key (str): token to log out
+
+    Raises:
+        requests.exceptions: HTTP/connection errors
+
+    """
+    print('logging out!')
+    req = requests.post(
+        'https://api.robinhood.com/api-token-logout/',
+        headers={'Authorization':'Token ' + auth_key},
+    )
+    req.raise_for_status()
+
 
 def load_schema(
         schema_name,
