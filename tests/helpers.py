@@ -1,4 +1,4 @@
-"""helpers.py: pytest helpers/config parsers"""
+'''helpers.py: pytest helpers/config parsers'''
 import atexit
 from os import path
 import json
@@ -10,6 +10,36 @@ import requests
 
 HERE = path.abspath(path.dirname(__file__))
 AUTH_KEY = ''
+ENDPOINTS = {}
+
+def fetch_endpoints(endpoint_name, api_root='https://api.robinhood.com/', _recur=False):
+    """get routes from REST root
+
+    Args:
+        endpoint_name (str): name of endpoint
+        api_root (str): URL for ROOT
+        recur (bool): has recursed?  avoid infini-loop
+
+    Returns:
+        str: address for desired endpoint
+
+    Raises:
+        requests.exceptions: HTTP/connection errors
+        KeyError: endpoint_name not found
+
+    """
+    global ENDPOINTS
+    if endpoint_name in ENDPOINTS:
+        return ENDPOINTS[endpoint_name]
+
+    if _recur:
+        raise Exception('Infinite Loop')
+
+    req = requests.get(api_root)
+    req.raise_for_status()
+
+    ENDPOINTS = req.json()
+    return fetch_endpoints(endpoint_name, _recur=True)
 
 def load_config(config_path=path.join(HERE, 'test_options.cfg')):
     """load test configuration from file
@@ -43,15 +73,19 @@ def load_config(config_path=path.join(HERE, 'test_options.cfg')):
 
     return config
 
+CONFIG = load_config()
+
 def raw_request_get(
-        endpoint,
+        endpoint='',
+        endpoint_url='',
         params=None,
         headers=None,
 ):
     """fetch raw data from endpoint
 
     Args:
-        endpoint (str): url for endpoint
+        endpoint (str): name
+        endpoint_url (str): direct-connect url
         params (:obj:`dict`): params for request
         headers (:obj:`dict`): HTTP headers
 
@@ -62,11 +96,13 @@ def raw_request_get(
         requests.exceptions: HTTP/connection errors
 
     """
-    req = requests.get(endpoint, params=params, headers=headers)
+    if not endpoint_url:
+        endpoint_url = fetch_endpoints(endpoint)
+    req = requests.get(endpoint_url, params=params, headers=headers)
     req.raise_for_status()
     return req.json()
 
-CONFIG = load_config()
+
 def xfail_can_auth(config=CONFIG):
     """help make sure test can run
 
