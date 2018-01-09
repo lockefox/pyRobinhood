@@ -49,22 +49,38 @@ class PyTest(TestCommand):
         self.pytest_args = [
             'tests',
             '-rx',
+            '-n',
+            '4',
             '--cov=' + __library_name__,
             '--cov-report=term-missing',
-            '--cov-config=.coveragerc'
-        ]    #load defaults here
+            '--cov-config=.coveragerc',
+        ]
 
     def run_tests(self):
         import shlex
-        #import here, cause outside the eggs aren't loaded
         import pytest
         pytest_commands = []
-        try:    #read commandline
+        try:
             pytest_commands = shlex.split(self.pytest_args)
-        except AttributeError:  #use defaults
+        except AttributeError:
             pytest_commands = self.pytest_args
         errno = pytest.main(pytest_commands)
         exit(errno)
+
+class TravisTest(PyTest):
+    """wrapper for Travis-CI run"""
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = [
+            'tests',
+            '-rx',
+            '-m',
+            'not auth',
+            '-v',
+            '--cov=' + __library_name__,
+            '--cov-report=term-missing',
+            '--cov-config=.coveragerc'
+        ]
 
 with open('README.rst', 'r', 'utf-8') as f:
     README = f.read()
@@ -94,6 +110,7 @@ setup(
     tests_require=[
         'pytest',
         'pytest_cov',
+        'pytest-xdist',
         'flaky',
         'jsonschema',
     ],
@@ -105,5 +122,6 @@ setup(
     },
     cmdclass={
         'test':PyTest,
+        'travis':TravisTest,
     },
 )

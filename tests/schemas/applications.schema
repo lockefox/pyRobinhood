@@ -1,0 +1,30 @@
+{
+    "type": "object",
+    "properties": {
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "account_type": {"type": "string"},
+                    "url": {"type": "string", "format": "uri"},
+                    "last_error": {"type": "string"},
+                    "state": {"type": "string"},
+                    "customer_type": {"type": "string"},
+                    "cip_questions": {"type": "null"},
+                    "user": {"type": "string", "format": "uri"},
+                    "ready": {"type": "boolean"}
+                },
+                "required": [
+                    "account_type", "url", "last_error", "state", "customer_type",
+                    "cip_questions", "user", "ready"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["previous", "next", "results"],
+    "additionalProperties": false
+}
