@@ -124,6 +124,16 @@ def test_instruments_schema():
 
     jsonschema.validate(result, schema)
 
+def test_markets_schema():
+    """validate /markets endpoint"""
+    result = helpers.raw_request_get(
+        endpoint='markets'
+    )
+
+    schema = helpers.load_schema('markets.schema')
+
+    jsonschema.validate(result, schema)
+
 def test_news_schema():
     """validate /midlands/news/ endpoint"""
     # TODO: not on API ROOT?

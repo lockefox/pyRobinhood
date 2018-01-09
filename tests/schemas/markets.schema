@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "website": {"type": "string", "format": "uri"},
+                    "city": {"type": "string"},
+                    "name": {"type": "string"},
+                    "url": {"type": "string", "format": "uri"},
+                    "country": {"type": "string"},
+                    "todays_hours": {"type": "string", "format": "uri"},
+                    "operating_mic": {"type": "string"},
+                    "acronym": {"type": "string"},
+                    "timezone": {"type": "string"},
+                    "mic": {"type": "string"}
+                },
+                "required": [
+                    "website", "city", "name", "url", "country", "todays_hours",
+                    "operating_mic", "acronym", "timezone", "mic"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["next", "previous"],
+    "additionalProperties": false
+}
