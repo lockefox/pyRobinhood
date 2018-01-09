@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "account": {"type": "string", "format": "uri"},
+                    "url": {"type": "string", "format": "uri"},
+                    "created_at": {"type": "string", "format": "date-time"},
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "download_url": {"type": "string", "format": "uri"},
+                    "date": {"type": "string", "format": "date-time"}
+                },
+                "required": [
+                    "account", "url", "created_at", "updated_at", "download_url",
+                    "date"
+                ]
+            }
+        }
+    },
+    "required": ["previous", "next", "results"],
+    "additionalProperties": false
+}
