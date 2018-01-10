@@ -23,10 +23,10 @@ Index
 =====
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-
+    test_plan.rst
 
 Indices and tables
 ==================
@@ -44,8 +44,8 @@ Indices and tables
 .. |PyPI Badge| image:: https://badge.fury.io/py/pyRobinhood.svg
     :target: https://badge.fury.io/py/pyRobinhood
 .. |Docs| image:: https://readthedocs.org/projects/pyrobinhood/badge/?version=latest
-   :target: http://pyrobinhood.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status
+    :target: http://pyrobinhood.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 .. |ShowLogo| image:: http://dl.eveprosper.com/podcast/prosper_github.png
     :target: http://eveprosper.com
 .. |RobinhoodLogo| image:: http://dl.eveprosper.com/podcast/robinhood_logo.png
