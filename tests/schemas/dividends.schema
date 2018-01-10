@@ -10,13 +10,13 @@
                 "properties": {
                     "account": {"type": "string", "format": "uri"},
                     "url": {"type": "string", "format": "uri"},
-                    "amount": {"type": "string"},
+                    "amount": {"type": "string", "pattern": "^\\d+\\.\\d{2}$"},
                     "payable_date": {"type": "string", "format": "date-time"},
                     "instrument": {"type": "string", "format": "uri"},
-                    "rate": {"type": "string"},
+                    "rate": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
                     "record_date": {"type": "string", "format": "date-time"},
-                    "position": {"type": "string"},
-                    "withholding": {"type": "string"},
+                    "position": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "withholding": {"type": "string", "pattern": "^\\d+\\.\\d{2}$"},
                     "id": {"type": "string"},
                     "paid_at": {"type": "string", "format": "date-time"}
                 },
