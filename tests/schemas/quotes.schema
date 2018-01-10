@@ -6,20 +6,20 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "ask_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "ask_price": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "ask_size": {"type": "integer"},
-                    "bid_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "bid_price": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "bid_size": {"type": "integer"},
                     "last_trade_price": {
                         "type": "string",
-                        "pattern": "^\\d+\\.\\d+$"},
+                        "pattern": "^\\d+\\.\\d{4}$"},
                     "last_extended_hours_trade_price": {
                         "type": ["string", "null"], 
-                        "pattern": "^\\d+\\.\\d+$"},
-                    "previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                        "pattern": "^\\d+\\.\\d{4}$"},
+                    "previous_close": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "adjusted_previous_close": {
                         "type": "string", 
-                        "pattern": "^\\d+\\.\\d+$"},
+                        "pattern": "^\\d+\\.\\d{4}$"},
                     "previous_close_date": {
                         "type": "string", 
                         "format": "date-time"},
