@@ -116,8 +116,7 @@ def test_instruments_schema():
     """validate /instruments endpoint"""
     # TODO: instruments from API ROOT
     result = helpers.raw_request_get(
-        endpoint_url='https://api.robinhood.com/instruments/' +
-        helpers.CONFIG.get('tests', 'good_instrument')
+        endpoint='instruments'
     )
 
     schema = helpers.load_schema('instruments.schema')
