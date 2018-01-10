@@ -11,12 +11,15 @@
                     "bid_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
                     "bid_size": {"type": "integer"},
                     "last_trade_price": {
-                        "type": "string", "pattern": "^\\d+\\.\\d+$"},
+                        "type": "string",
+                        "pattern": "^\\d+\\.\\d+$"},
                     "last_extended_hours_trade_price": {
                         "type": "string", 
                         "pattern": "^\\d+\\.\\d+$"},
                     "previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
-                    "adjusted_previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "adjusted_previous_close": {
+                        "type": "string", 
+                        "pattern": "^\\d+\\.\\d+$"},
                     "previous_close_date": {
                         "type": "string", 
                         "format": "date-time"},
