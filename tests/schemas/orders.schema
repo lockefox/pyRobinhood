@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "ref_id": {"type": "string"},
+                    "time_in_force": {"type": "string", "enum": ["gfd"]},
+                    "fees": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "cancel": {"type": "null"},
+                    "id": {"type": "string"},
+                    "cumulative_quantity": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "stop_price": {"type": ["string", "null"], "pattern": "^\\d+\\.\\d+$"},
+                    "reject_reason": {"type": ["string", "null"]},
+                    "instrument": {"type": "string", "format": "uri"},
+                    "state": {"type": "string", "enum":["filled"]},
+                    "trigger": {"type": "string"},
+                    "override_dtbp_checks": {"type": "boolean"},
+                    "type": {"type": "string", "enum": ["market"]},
+                    "last_transaction_at": {"type": "string", "format": "uri"},
+                    "price": {"type": ["string", "null"], "pattern": "^\\d+\\.\\d+$"},
+                    "extended_hours": {"type": "boolean"},
+                    "account": {"type": "string", "format": "uri"},
+                    "url": {"type": "string", "format": "uri"},
+                    "created_at": {"type": "string", "format": "date-time"},
+                    "side": {"type": "string", "enum": ["buy", "sell"]},
+                    "override_day_trade_checks": {"type": "boolean"},
+                    "position": {"type": "string", "format": "uri"},
+                    "average_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "quantity": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "executions": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "timestamp": {"type": "string", "format": "date-time"},
+                                "price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                                "settlement_date": {"type": "string", "format": "date-time"},
+                                "id": {"type": "string"},
+                                "quantity": {"type": "string", "pattern": "^\\d+\\.\\d+$"}
+                            },
+                            "required": [
+                                "timestamp", "price", "settlement_date", "id", "quantity"
+                            ],
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "required": [
+                    "updated_at", "ref_id", "time_in_force", "fees", "cancel", "id", 
+                    "cumulative_quantity", "stop_price", "reject_reason", "instrument", "state",
+                    "trigger", "override_dtbp_checks", "type", "last_transaction_at", "price",
+                    "extended_hours", "account", "url", "created_at", "side", "override_day_trade_checks",
+                    "position", "average_price", "quantity", "executions"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["next", "previous"],
+    "additionalProperties": false
+}
