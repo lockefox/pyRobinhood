@@ -14,7 +14,7 @@
                         "type": "string",
                         "pattern": "^\\d+\\.\\d+$"},
                     "last_extended_hours_trade_price": {
-                        "type": "string", 
+                        "type": ["string", "null"], 
                         "pattern": "^\\d+\\.\\d+$"},
                     "previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
                     "adjusted_previous_close": {
@@ -28,7 +28,7 @@
                     "has_traded": {"type": "boolean"},
                     "last_trade_price_source": {
                         "type": "string", 
-                        "enum":["consolidated"]},
+                        "enum":["consolidated", "nls"]},
                     "updated_at": {"type": "string", "format": "date-time"},
                     "instrument": {"type": "string", "format":"uri"}
                 },

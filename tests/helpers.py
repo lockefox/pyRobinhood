@@ -147,13 +147,12 @@ def end_logout(auth_key):
         requests.exceptions: HTTP/connection errors
 
     """
-    print('logging out!')
+    print('logging out! {}'.format(auth_key))
     req = requests.post(
         'https://api.robinhood.com/api-token-logout/',
         headers={'Authorization':'Token ' + auth_key},
     )
     req.raise_for_status()
-
 
 def load_schema(
         schema_name,
