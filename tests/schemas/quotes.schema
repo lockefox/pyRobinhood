@@ -1,0 +1,44 @@
+{
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ask_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "ask_size": {"type": "integer"},
+                    "bid_price": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "bid_size": {"type": "integer"},
+                    "last_trade_price": {
+                        "type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "last_extended_hours_trade_price": {
+                        "type": "string", 
+                        "pattern": "^\\d+\\.\\d+$"},
+                    "previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "adjusted_previous_close": {"type": "string", "pattern": "^\\d+\\.\\d+$"},
+                    "previous_close_date": {
+                        "type": "string", 
+                        "format": "date-time"},
+                    "symbol": {"type": "string", "pattern": "^[A-Z]+$"},
+                    "trading_halted": {"type": "boolean"},
+                    "has_traded": {"type": "boolean"},
+                    "last_trade_price_source": {
+                        "type": "string", 
+                        "enum":["consolidated"]},
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "instrument": {"type": "string", "format":"uri"}
+                },
+                "required": [
+                    "ask_price", "ask_size", "bid_price", "bid_size", "last_trade_price",
+                    "last_extended_hours_trade_price", "previous_close", "adjusted_previous_close", 
+                    "previous_close_date", "symbol", "trading_halted", "has_traded",
+                    "last_trade_price_source", "updated_at", "instrument"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["results"],
+    "additionalProperties": false
+}

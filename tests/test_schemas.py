@@ -158,3 +158,15 @@ def test_news_schema():
     schema = helpers.load_schema('news.schema')
 
     jsonschema.validate(result, schema)
+
+def test_quotes_schema():
+    """validate /quotes endpoint"""
+    # TODO: not on API ROOT?
+    result = helpers.raw_request_get(
+        endpoint='quotes',
+        params={'symbols': helpers.CONFIG.get('tests', 'good_stock_list')}
+    )
+
+    schema = helpers.load_schema('quotes.schema')
+
+    jsonschema.validate(result, schema)
