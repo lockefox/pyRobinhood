@@ -133,6 +133,20 @@ def test_markets_schema():
 
     jsonschema.validate(result, schema)
 
+@pytest.mark.auth
+def test_mfa_schema():
+    """validate /mfa endpoint"""
+    token = helpers.xfail_can_auth()
+
+    result = helpers.raw_request_get(
+        endpoint='mfa',
+        headers={'Authorization': 'Token ' + token},
+    )
+
+    schema = helpers.load_schema('mfa.schema')
+
+    jsonschema.validate(result, schema)
+
 def test_news_schema():
     """validate /midlands/news/ endpoint"""
     # TODO: not on API ROOT?
