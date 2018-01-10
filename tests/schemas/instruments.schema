@@ -13,7 +13,7 @@
                         "type": "string", 
                         "enum": ["stock", "etp", "wrt", "adr", "pfd", "unit", "right", "cef", ""]},
                     "splits": {"type": "string", "format": "uri"},
-                    "margin_initial_ratio": {"type": "string"},
+                    "margin_initial_ratio": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "url": {"type": "string", "format": "uri"},
                     "quote": {"type": "string", "format": "uri"},
                     "tradability": {
@@ -28,9 +28,9 @@
                         "type": "string", 
                         "enum": ["active", "unlisted", "inactive"]},
                     "country": {"type": "string"},
-                    "day_trade_ratio": {"type": "string"},
+                    "day_trade_ratio": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "tradeable": {"type": "boolean"},
-                    "maintenance_ratio": {"type": "string"},
+                    "maintenance_ratio": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "id": {"type": "string"},
                     "market": {"type": "string", "format": "uri"},
                     "simple_name": {"type": ["string", "null"]}
