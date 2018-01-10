@@ -19,18 +19,18 @@ There are two key problems our schema tests cover:
 Skipped Endpoints
 -----------------
 
-- ``https://api.robinhood.com/subscription/subscription_fees/``
-- ``https://api.robinhood.com/cash_journal/margin_interest_charges/``
-- ``https://api.robinhood.com/margin/upgrades/``
-- ``https://api.robinhood.com/password_reset/request/``
-- ``https://api.robinhood.com/password_change/``
+- ``/subscription/subscription_fees/``
+- ``/cash_journal/margin_interest_charges/``
+- ``/margin/upgrades/``
+- ``/password_reset/request/``
+- ``/password_change/``
 
 Authorization
 =============
 
 Though live Robinhood tests would be best, Robinhood account credentials are extremely valuable.  
 
-We do not test authorized feeds in `CI`_, and opt for mocks as much as possible to exercize code.  Any live-tests that require authorization should be marked with ``\@pytest.mark.auth``.
+We do not test authorized feeds in `CI`_, and opt for mocks as much as possible to exercize code.  Any live-tests that require authorization should be marked with ``@pytest.mark.auth``.
 
 To test authorized feeds:
 
