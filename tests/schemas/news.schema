@@ -6,7 +6,7 @@
         "previous": {"type": ["string", "null"], "format": "uri"},
         "results": {
             "type": "array",
-            "items":{
+            "items": {
                 "type": "object",
                 "properties": {
                     "api_source": {"type": "string"},
@@ -34,6 +34,6 @@
             }
         }
     },
-    "required": ["count", "next", "previous"],
+    "required": ["count", "next", "previous", "results"],
     "additionalProperties": false
 }

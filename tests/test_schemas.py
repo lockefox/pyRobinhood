@@ -173,6 +173,20 @@ def test_orders_schema():
 
     jsonschema.validate(result, schema)
 
+@pytest.mark.auth
+def test_portfolios_schema():
+    """validate /orders endpoint"""
+    token = helpers.xfail_can_auth()
+
+    result = helpers.raw_request_get(
+        endpoint='portfolios',
+        headers={'Authorization': 'Token ' + token},
+    )
+
+    schema = helpers.load_schema('portfolios.schema')
+
+    jsonschema.validate(result, schema)
+
 def test_quotes_schema():
     """validate /quotes endpoint"""
     # TODO: not on API ROOT?

@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "unwithdrawable_grants": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "account": {"type": "string", "format": "uri"},
+                    "excess_maintenance_with_uncleared_deposits": {
+                        "type": "string", 
+                        "pattern": "^\\d+\\.\\d{4}$"},
+                    "url": {"type": "string", "format": "uri"},
+                    "excess_maintenance": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "market_value": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "withdrawable_amount": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "last_core_market_value": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "unwithdrawable_deposits": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "extended_hours_equity": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "excess_margin": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "excess_margin_with_uncleared_deposits": {
+                        "type": "string", 
+                        "pattern": "^\\d+\\.\\d{4}$"},
+                    "equity": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "last_core_equity": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "adjusted_equity_previous_close": {
+                        "type": "string",
+                        "pattern": "^\\d+\\.\\d{4}$"},
+                    "equity_previous_close": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "start_date": {"type": "string", "format": "uri"},
+                    "extended_hours_market_value": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"}
+                },
+                "required": [
+                    "unwithdrawable_grants", "account", "excess_maintenance_with_uncleared_deposits",
+                    "url", "excess_maintenance", "market_value", "withdrawable_amount", 
+                    "last_core_market_value", "unwithdrawable_deposits", "extended_hours_equity",
+                    "excess_margin", "excess_margin_with_uncleared_deposits", "equity", 
+                    "last_core_equity", "adjusted_equity_previous_close", "equity_previous_close",
+                    "start_date", "extended_hours_market_value"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["results"],
+    "additionalProperties": false
+}
