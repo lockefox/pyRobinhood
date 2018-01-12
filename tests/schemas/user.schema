@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "username": {"type": "string", "format": "email"},
+        "first_name": {"type": "string"},
+        "last_name": {"type": "string"},
+        "id_info": {"type": "string", "format": "uri"},
+        "url": {"type": "string", "format": "uri"},
+        "email_verified": {"type": "boolean"},
+        "created_at": {"type": "string", "format": "date-time"},
+        "basic_info": {"type": "string", "format": "date-time"},
+        "email": {"type": "string", "format": "email"},
+        "investment_profile": {"type": "string", "format": "uri"},
+        "id": {"type": "string"},
+        "international_info": {"type": "string", "format": "uri"},
+        "employment": {"type": "string", "format": "uri"},
+        "additional_info": {"type": "string", "format": "uri"}
+    },
+    "required": [
+        "username", "first_name", "last_name", "id_info", "url", "email_verified",
+        "created_at", "basic_info", "email", "investment_profile", "id",
+        "international_info", "employment", "additional_info"
+    ],
+    "additionalProperties": false
+}

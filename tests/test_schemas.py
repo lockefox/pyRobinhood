@@ -198,3 +198,17 @@ def test_quotes_schema():
     schema = helpers.load_schema('quotes.schema')
 
     jsonschema.validate(result, schema)
+
+@pytest.mark.auth
+def test_user_schema():
+    """validate /orders endpoint"""
+    token = helpers.xfail_can_auth()
+
+    result = helpers.raw_request_get(
+        endpoint='user',
+        headers={'Authorization': 'Token ' + token},
+    )
+
+    schema = helpers.load_schema('user.schema')
+
+    jsonschema.validate(result, schema)

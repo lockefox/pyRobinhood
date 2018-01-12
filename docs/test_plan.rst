@@ -20,10 +20,15 @@ Skipped Endpoints
 -----------------
 
 - ``/subscription/subscription_fees/``
+- ``/subscription/subscriptions/``
 - ``/cash_journal/margin_interest_charges/``
 - ``/margin/upgrades/``
 - ``/password_reset/request/``
 - ``/password_change/``
+- ``/wire/relationships/``
+- ``/ach/queued_deposit/``
+- ``/wire/transfers/``
+- ``/settings/notifications/``
 
 Authorization
 =============
