@@ -106,6 +106,7 @@ setup(
     install_requires=[
         'requests',
         'six',
+        'validators',
     ],
     tests_require=[
         'pytest',
