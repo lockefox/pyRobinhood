@@ -86,7 +86,7 @@
                     }
                 },
                 "required": [
-                    "deactivated", "updated_at", "margin_balances", "portfolio", "cash_balances",
+                    "nummus_enabled", "deactivated", "updated_at", "margin_balances", "portfolio", "cash_balances",
                     "can_downgrade_to_cash", "withdrawal_halted", "cash_available_for_withdrawal", "type", "sma",
                     "sweep_enabled", "deposit_halted", "buying_power", "user", "max_ach_early_access_amount",
                     "instant_eligibility", "cash_held_for_orders", "only_position_closing_trades", "url",
