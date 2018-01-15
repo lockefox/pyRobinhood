@@ -112,6 +112,7 @@ setup(
         'pytest',
         'pytest_cov',
         'pytest-xdist',
+        'requests-mock',
         'flaky',
         'jsonschema',
     ],

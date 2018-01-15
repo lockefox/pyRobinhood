@@ -151,6 +151,13 @@ class Endpoint:
                 token=self._token,
                 _raw_data=value,
             )
+        if validators.url(value):
+            return Endpoint(
+                address=value,
+                username=self.__username,
+                password=self.__password,
+                token=self._token,
+            )
 
         return value
 

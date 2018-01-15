@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "previous": {"type": ["string", "null"], "format": "uri"},
+        "next": {"type": ["string", "null"], "format": "uri"},
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "shares_held_for_stock_grants": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "account": {"type": "string", "format": "uri"},
+                    "intraday_quantity": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "intraday_average_buy_price": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "url": {"type": "string", "format": "uri"},
+                    "created_at": {"type": "string", "format": "date-time"},
+                    "updated_at": {"type": "string", "format": "date-time"},
+                    "shares_held_for_buys": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "average_buy_price": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "instrument": {"type": "string", "format": "uri"},
+                    "shares_held_for_sells": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
+                    "quantity": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"}
+                },
+                "required": [
+                    "shares_held_for_stock_grants", "account", "intraday_quantity",
+                    "intraday_average_buy_price", "url", "created_at", "updated_at", 
+                    "shares_held_for_buys", "average_buy_price", "instrument", 
+                    "shares_held_for_sells", "quantity"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": ["previous", "next", "results"],
+    "additionalProperties": false
+}

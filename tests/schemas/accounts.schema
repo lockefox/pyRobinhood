@@ -8,6 +8,7 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "nummus_enabled": {"type": ["null", "boolean"]},
                     "deactivated": {"type": "boolean"},
                     "updated_at": {"type": "string", "format": "date-time"},
                     "portfolio": {"type": "string", "format": "uri"},
