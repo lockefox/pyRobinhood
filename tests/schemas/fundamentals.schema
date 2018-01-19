@@ -21,8 +21,8 @@
                     "ceo": {"type": "string"},
                     "headquarters_city": {"type": "string"},
                     "headquarters_state": {"type": "string"},
-                    "num_employees": {"type": "integer"},
-                    "year_founded": {"type": "integer"}
+                    "num_employees": {"type": ["integer", "null"]},
+                    "year_founded": {"type": ["integer", "null"]}
                 },
                 "required": [
                     "open", "high", "low", "volume", "average_volume", 

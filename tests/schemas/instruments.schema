@@ -11,7 +11,7 @@
                     "min_tick_size": {"type": ["string", "null"]},
                     "type": {
                         "type": "string", 
-                        "enum": ["stock", "etp", "wrt", "adr", "pfd", "unit", "right", "cef", ""]},
+                        "enum": ["stock", "etp", "wrt", "adr", "pfd", "unit", "right", "cef", "reit", ""]},
                     "splits": {"type": "string", "format": "uri"},
                     "margin_initial_ratio": {"type": "string", "pattern": "^\\d+\\.\\d{4}$"},
                     "url": {"type": "string", "format": "uri"},

@@ -1,7 +1,7 @@
 .. pyRobinhood documentation master file, created by
-   sphinx-quickstart on Sun Jan  7 12:01:14 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+    sphinx-quickstart on Sun Jan  7 12:01:14 2018.
+    You can adapt this file completely to your liking, but it should at least
+    contain the root `toctree` directive.
 
 ===========
 pyRobinhood
@@ -26,6 +26,7 @@ Index
     :maxdepth: 2
     :caption: Contents:
 
+    crawler.rst
     test_plan.rst
 
 Indices and tables
