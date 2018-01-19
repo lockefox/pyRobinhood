@@ -10,7 +10,10 @@ Just walk the API node-by-node.  Crawler is provided as a layer to access raw `R
 
     import pyrobinhood.crawler as crawler
 
-    root = crawler.Endpoint(username='MYACCOUNT', password='MYPASSWORD')
+    root = crawler.Endpoint(
+        username='MYACCOUNT', 
+        password='MYPASSWORD',
+    )
 
     # List all companies in Robinhood tracking
     company_fundamentals = []
