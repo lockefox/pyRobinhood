@@ -9,9 +9,9 @@ install:
   - "pip install ."
 script:
   - "python setup.py travis"
-after_success:
-  - "pip install python-coveralls"
-  - "coveralls"
+#after_success:
+#  - "pip install python-coveralls"
+#  - "coveralls"
 #deploy:
 #  skip_cleanup: true
 #  provider: pypi

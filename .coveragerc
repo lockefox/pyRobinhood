@@ -1,6 +1,7 @@
 [report]
     omit = 
         pyrobinhood/__init__.py
+        pyrobinhood/__version__.py
         pyrobinhood/exceptions.py
 
 [paths]
