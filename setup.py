@@ -79,7 +79,22 @@ class TravisTest(PyTest):
             '-v',
             '--cov=' + __library_name__,
             '--cov-report=term-missing',
-            '--cov-config=.coveragerc'
+            '--cov-config=.coveragerc',
+        ]
+
+class NanoTest(PyTest):
+    """wrapper for Travis-CI run"""
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.pytest_args = [
+            'tests',
+            '-rx',
+            '-v',
+            ''
+            '--cov=' + __library_name__,
+            '--cov-report=term-missing',
+            '--cov-config=.coveragerc',
+            '--junitxml=junit.xml',
         ]
 
 with open('README.rst', 'r', 'utf-8') as f:
@@ -123,7 +138,8 @@ setup(
         ]
     },
     cmdclass={
-        'test':PyTest,
-        'travis':TravisTest,
+        'test': PyTest,
+        'travis': TravisTest,
+        'nano': NanoTest,
     },
 )
